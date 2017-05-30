@@ -1,10 +1,9 @@
 //character object
-
 var char = {
   luke: {
     name: "luke",
     health: 100,
-    attackPower: 5,
+    attackPower: 8,
     counterAttackPower: 12
   },
   yoda: {
@@ -36,7 +35,6 @@ var enemiesDefeated = 0;
 var gameOver = false; //determination if game is over or not
 
 //Functions for game
-
 //assigning properties of object to characters when chosen
 function attackervalues(chosenAttacker) {
   character.name = chosenAttacker.name;
@@ -54,5 +52,5 @@ function pickdefendervalues(chosenEnemy) {
 //this function moves all unchosen characters to the enemy div
 function newEnemies() {
   $(".available").removeClass("available").addClass("enemy");
-  $(".enemy-character").append($(".enemy"));
+  $(".enemy-character").append($(".enemy "));
 }

@@ -12,23 +12,18 @@ $(document).ready(function() {
     // User is choosing the character
     if (yourselection === false) {
       $(".gameinfo").html("Luke will fight to the death!");
-
       // Set the user's character
       attackervalues(char.luke);
       yourselection = true;
-
       // Display the chosen character
       $("#luke").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
-
       // Move the remaining characters to the enemies section
       newEnemies();
-
     } else if ((yourselection === true) && (defenderselection === false)) {
       // User is choosing the defender
       if ($("#luke").hasClass("enemy")) {
         $(".gameinfo").empty();
-
         // Set the user's enemy
         pickdefendervalues(char.luke);
         defenderselection = true;
@@ -41,64 +36,49 @@ $(document).ready(function() {
   });
 
   $("#yoda").on("click", function() {
-
     // User is choosing the character
     if (yourselection === false) {
       $(".gameinfo").html("Yoda will fight to the death!");
-
       // Set the user's character
       attackervalues(char.yoda);
       yourselection = true;
-
       // Display the chosen character
       $("#yoda").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
-
       // Move the remaining characters to the enemies section
       newEnemies();
-
     } else if ((yourselection === true) && (defenderselection === false)) {
       // User is choosing the defender
       if ($("#yoda").hasClass("enemy")) {
         $(".gameinfo").empty();
-
         // Set the user's enemy
         pickdefendervalues(char.yoda);
         defenderselection = true;
-
         // Add the character to the defender section
         $("#yoda").removeClass("enemy").addClass("defender-character");
         $("#defender-character").append(this);
       }
     }
   });
-
   $("#boba").on("click", function() {
-
     // User is choosing the character
     if (yourselection === false) {
       $(".gameinfo").html("Boba Fett will fight to the death!");
-
       // Set the user's character
       attackervalues(char.boba);
       yourselection = true;
-
       // Display the chosen character
       $("#boba").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
-
       // Move the remaining characters to the enemies section
       newEnemies();
-
     } else if ((yourselection === true) && (defenderselection === false)) {
       // User is choosing the defender
       if ($("#boba").hasClass("enemy")) {
         $(".gameinfo").empty();
-
         // Set the user's enemy
         pickdefendervalues(char.boba);
         defenderselection = true;
-
         // Add the character to the defender section
         $("#boba").removeClass("enemy").addClass("defender-character");
         $("#defender-character").append(this);
@@ -107,31 +87,24 @@ $(document).ready(function() {
   });
 
   $("#chewy").on("click", function() {
-
     // User is choosing the character
     if (yourselection == false) {
       $(".gameinfo").html("Chewbacca will fight to the death!");
-
       // Set the user's character
       attackervalues(char.chewy);
       yourselection = true;
-
       // Display the chosen character
       $("#chewy").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
-
       // Move the remaining characters to the enemies section
       newEnemies();
-
     } else if ((yourselection === true) && (defenderselection == false)) {
       // User is choosing the defender
       if ($("#chewy").hasClass("enemy")) {
         $(".gameinfo").empty();
-
         // Set the user's enemy
         pickdefendervalues(char.chewy);
         defenderselection = true;
-
         // Add the character to the defender section
         $("#chewy").removeClass("enemy").addClass("defender-character");
         $("#defender-character").append(this);
@@ -140,7 +113,6 @@ $(document).ready(function() {
   });
   //Attack button is clicked
   $("#attackbtn").on("click", function() {
-
     // User is ready to attack the defender
     if (yourselection && defenderselection && !gameOver) {
       // User attacks the defender and decreases the defender's health points
@@ -161,7 +133,7 @@ $(document).ready(function() {
           $(".gameinfo").append("<p>" + defender.name + " attacked you back for " + defender.counterAttackPower + " damage.</p>");
         } else {
           gameOver = true;
-          $("#gameinfo").html("<p>You were defeated...</p><p>Play again?</p>");
+          $(".gameinfo").html("<p>You were defeated...</p><p>Play again?</p>");
           $("#revengebtn").show();
         }
       } else {
@@ -174,20 +146,21 @@ $(document).ready(function() {
         // Check if the user has won the game
         if (enemiesDefeated === 3) {
           gameOver = true;
-          $(".gameinfo").html("<p>You have won the game!!!</p><p>Play again?</p>");
+          $(".gameinfo").html("<p>You have won the game!!!</p><p>Would you like to battle again?</p>");
           $("#revengebtn").show();
         }
       }
+      //game alert if a fighter has not been selected yet
     } else if (!characterSelected && !gameOver) {
-      $("#game-message").html("<p>You must first select your game character.</p>");
+      $(".gameinfo").html("<p>You must first select your fighter!</p>");
+      //game alert if an enemy has not been selected yet
     } else if (!defenderSelected && !gameOver) {
-      $("#game-message").html("<p>You must choose an enemy to fight.</p>");
+      $(".gameinfo").html("<p>You must choose an enemy to fight!</p>");
     }
 
   });
-
+  //function to reload game when the replay button is clicked
   $("#revengebtn").on("click", function() {
     location.reload();
   });
-
-}); // Main Process
+}); // closing brack for game process
