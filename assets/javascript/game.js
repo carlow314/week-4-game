@@ -15,6 +15,8 @@ $(document).ready(function() {
       // Set the user's character
       attackervalues(char.luke);
       yourselection = true;
+      $("#starwarstheme").get(0).pause();
+      lukesound.play();
       // Display the chosen character
       $("#luke").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
@@ -42,6 +44,8 @@ $(document).ready(function() {
       // Set the user's character
       attackervalues(char.yoda);
       yourselection = true;
+      $("#starwarstheme").get(0).pause();
+      yodasound.play();
       // Display the chosen character
       $("#yoda").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
@@ -67,6 +71,8 @@ $(document).ready(function() {
       // Set the user's character
       attackervalues(char.boba);
       yourselection = true;
+      $("#starwarstheme").get(0).pause();
+      fettsound.play();
       // Display the chosen character
       $("#boba").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);
@@ -93,6 +99,8 @@ $(document).ready(function() {
       // Set the user's character
       attackervalues(char.chewy);
       yourselection = true;
+      $("#starwarstheme").get(0).pause();
+      chewysound.play();
       // Display the chosen character
       $("#chewy").removeClass("available").addClass("chosen-character");
       $("#chosen-character").append(this);

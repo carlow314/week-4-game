@@ -33,7 +33,10 @@ var character = {}; //store char object data for character
 var defender = {}; //store char object data for defender
 var enemiesDefeated = 0;
 var gameOver = false; //determination if game is over or not
-
+var lukesound = new Audio(src = "assets/sounds/wontfail.mp3"); //luke audio
+var yodasound = new Audio(src = "assets/sounds/yodalaughing.mp3"); //yoda Audio
+var chewysound = new Audio(src = "assets/sounds/chewy_roar.mp3"); //chewy audio
+var fettsound = new Audio(src = "assets/sounds/fett.wav"); //boba fett audio
 //Functions for game
 //assigning properties of object to characters when chosen
 function attackervalues(chosenAttacker) {
